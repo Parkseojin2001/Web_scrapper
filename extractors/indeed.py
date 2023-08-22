@@ -53,7 +53,7 @@ def extract_indeed_jobs(keyword):
                 company = job.find("span", class_ = "companyName")
                 location = job.find("div", class_ = "companyLocation")
                 job_data = {
-                    'link' : f'{base_url}{link}',
+                    'link' : f'https://kr.indeed.com/viewjob{link[7:]}',
                     'company' : company.string.replace(",", " "),
                     'location' : location.string.replace(",", " "),
                     'position' : title.replace(",", " ")
