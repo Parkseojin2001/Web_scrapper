@@ -4,8 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Scrapper</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 </head>
 <body>
-    <h1>Search Result</h1>
+    <main class = "container">
+        <h1>Search Result for "{{keyword}}"</h1>
+        <figure>
+            <table role = "grid">
+                <tr>
+                    <th>Position</th>
+                    <th>Company</th>
+                    <th>Location</th>
+                    <th>Link</th>
+                </tr>
+                <tbody>
+                    {% for job in jobs %}
+                        <tr>
+                            <td>{{job.position}}</td>
+                            <td>{{job.company}}</td>
+                            <td>{{job.location}}</td>
+                            <td><a href = "{{job.link}}" target = "_blank">Apply now &rarr;</a></td>
+                        </tr >
+                    {% endfor %}
+                </tbody>
+            </table>
+        </figure>
+    </main>
 </body>
 </html>
